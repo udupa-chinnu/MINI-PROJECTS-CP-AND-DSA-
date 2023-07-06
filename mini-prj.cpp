@@ -1,6 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+string encode(string message,int k,int len)
+{
+  
+  for(int i=0;i<len;i++)
+  {
+    message[i]+=k;
+    while(message[i]>'z')message[i]-=26; //if any character exceeds 'z'
+  }
+  cout<<"The encoded msg is: "<<message;
+}
+
+string decode(string message,int k,int len)
+{
+   for(int i=0;i<len;i++)
+  {
+    message[i]-=k;
+    while(message[i]<'a')message[i]+=26;//if any character subceeds 'a'
+  }
+  cout<<"The encoded msg is: "<<message;
+}
 int main()
 {
   int k,len;
@@ -13,17 +34,10 @@ int main()
   cout<<"Enter the number of shifts: ";
   cin>>k;
 
-  if(enc!="encode" || enc!="decode"){
-    cout<<"ERROR [typo]: Was that encode or decode?:)";exit(0);
-  }
   while(k>27)k-=26;// if k-th ahead character exceeds 'z'
+  len=message.length();//To find the lenth of the string
 
-  len=message.length();
-  for(int i=0;i<len;i++)
-  {
-    message[i]+=k;
-    while(message[i]>'z')message[i]-=26; // if any character exceeds 'z'
-  }
+  if(enc=="encode")encode(message,k,len);
+  else if(enc=="decode")decode(message,k,len);
 
-  cout<<"The "<<enc<<"d message is: "<<message ;
 }
