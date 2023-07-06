@@ -13,6 +13,9 @@ int main()
   cout<<"Enter the number of shifts: ";
   cin>>k;
 
+  if(enc!="encode" || enc!="decode"){
+    cout<<"ERROR [typo]: Was that encode or decode?:)";exit(0);
+  }
   while(k>27)k-=26;// if k-th ahead character exceeds 'z'
 
   len=message.length();
