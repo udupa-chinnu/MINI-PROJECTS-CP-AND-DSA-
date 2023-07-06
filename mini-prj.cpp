@@ -13,13 +13,13 @@ int main()
   cout<<"Enter the number of shifts: ";
   cin>>k;
 
-  while(k>27)k-=26;
+  while(k>27)k-=26;// if k-th ahead character exceeds 'z'
 
   len=message.length();
   for(int i=0;i<len;i++)
   {
     message[i]+=k;
-    while(message[i]>'z')message[i]-=26;
+    while(message[i]>'z')message[i]-=26; // if any character exceeds 'z'
   }
 
   cout<<"The "<<enc<<"d message is: "<<message ;
