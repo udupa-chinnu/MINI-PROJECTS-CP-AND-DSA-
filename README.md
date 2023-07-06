@@ -1,1 +1,2 @@
-# MINI-PROJECTS-CP-AND-DSA-
+This is my first Github repo.
+A Lot more is on the way ....
