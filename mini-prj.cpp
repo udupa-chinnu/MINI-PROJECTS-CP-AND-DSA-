@@ -8,7 +8,7 @@ string encode(string message,int k,int len)
   for(int i=0;i<len;i++)
   {
     message[i]+=k;
-    while(message[i]>'z')message[i]-=26; //if any character exceeds 'z'
+    if(message[i]>'z')message[i]-=26; //if any character exceeds 'z'
   }
   cout<<"The encoded msg is: "<<message;
 }
@@ -18,7 +18,7 @@ string decode(string message,int k,int len)
    for(int i=0;i<len;i++)
   {
     message[i]-=k;
-    while(message[i]<'a')message[i]+=26;//if any character subceeds 'a'
+    if(message[i]<'a')message[i]+=26;//if any character subceeds 'a'
   }
   cout<<"The encoded msg is: "<<message;
 }
