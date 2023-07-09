@@ -2,10 +2,10 @@
 using namespace std;
 
 
-string encode(string message,int k,int len)
+string encode(string message,int k)
 {
   
-  for(int i=0;i<len;i++)
+  for(int i=0;i<message.length();i++)
   {
     message[i]+=k;
     if(message[i]>'z')message[i]-=26; //if any character exceeds 'z'
@@ -13,9 +13,9 @@ string encode(string message,int k,int len)
   cout<<"The encoded msg is: "<<message;
 }
 
-string decode(string message,int k,int len)
+string decode(string message,int k)
 {
-   for(int i=0;i<len;i++)
+   for(int i=0;i<message.length();i++)
   {
     message[i]-=k;
     if(message[i]<'a')message[i]+=26;//if any character subceeds 'a'
@@ -35,9 +35,8 @@ int main()
   cin>>k;
 
   while(k>27)k-=26;// if k-th ahead character exceeds 'z'
-  len=message.length();//To find the lenth of the string
 
-  if(enc=="encode")encode(message,k,len);
-  else if(enc=="decode")decode(message,k,len);
+  if(enc=="encode")encode(message,k);
+  else if(enc=="decode")decode(message,k);
 
 }
