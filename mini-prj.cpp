@@ -24,7 +24,7 @@ string decode(string message,int k)
 }
 int main()
 {
-  int k,len;
+  int k;
   string message,enc;
   
   cout<<"Type encode to encrypt and decode to decrypt: ";
